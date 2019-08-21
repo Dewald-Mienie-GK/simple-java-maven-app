@@ -16,13 +16,9 @@ pipeline {
             
             steps {
                 sh 'mvn -B -DskipTests clean package'
-            }
             
-            steps {
                 sh 'mvn test'
-            }
-            
-            steps {
+           
                 sh './jenkins/scripts/deliver.sh' 
             }
             
