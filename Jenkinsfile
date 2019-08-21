@@ -20,6 +20,8 @@ pipeline {
                 sh 'mvn test'
            
                 sh './jenkins/scripts/deliver.sh' 
+                
+                sh 'cp ./target/*.jar ../frontend/'
             }
             
             post {
