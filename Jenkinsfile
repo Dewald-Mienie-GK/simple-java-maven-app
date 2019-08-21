@@ -21,6 +21,8 @@ pipeline {
            
                 sh './jenkins/scripts/deliver.sh' 
                 
+                sh 'mkdir -p ../frontend'
+                
                 sh 'cp ./target/*.jar ../frontend/'
             }
             
