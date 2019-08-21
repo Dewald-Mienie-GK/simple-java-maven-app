@@ -1,4 +1,6 @@
 pipeline {  
+    echo "Hello"
+    
     agent {
         docker {
             image 'maven:3-alpine'
