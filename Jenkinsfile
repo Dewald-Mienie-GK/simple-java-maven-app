@@ -1,9 +1,11 @@
 pipeline {
+    def workspace = pwd()
+    
     agent {
         docker {
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
-            customWorkspace "${pwd()}/backend"
+            customWorkspace "${workspace}/backend"
         }
     }
     options {
