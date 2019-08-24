@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh 'cd backend'
                 
-                sh 'mvn -B -DskipTests clean package'
+                sh 'cd backend && mvn -B -DskipTests clean package'
             
                 sh 'mvn test'
            
