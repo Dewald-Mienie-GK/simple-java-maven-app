@@ -10,11 +10,12 @@ pipeline {
                 docker {
                     image 'maven:3-alpine'
                     args '-v /root/.m2:/root/.m2'
-                    customWorkspace "workspace/${JOB_NAME}/back3nd"
                 }
             }
             
             steps {
+                sh 'cd backend'
+                
                 sh 'mvn -B -DskipTests clean package'
             
                 sh 'mvn test'
